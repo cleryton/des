@@ -1,13 +1,13 @@
 import sqlite3
 
 def get_connection():
-    """Retorna uma conexão com o banco SQLite."""
+    """Retorna uma conexão com o banco SQLite assistente.db."""
     conn = sqlite3.connect('assistente.db')
     conn.row_factory = sqlite3.Row
     return conn
 
 def criar_tabelas():
-    """Cria as tabelas se não existirem (executa o script SQL)."""
+    """Cria as tabelas necessárias para o assistente pessoal."""
     conn = get_connection()
     cur = conn.cursor()
     cur.executescript("""
